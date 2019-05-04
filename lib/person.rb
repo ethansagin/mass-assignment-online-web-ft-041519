@@ -1,7 +1,10 @@
 class Person
   attr_accessor
   
-  def initialize(attributes)
-    attributes.each {|key, value| self.send(("#{key}="), value)}
+  def initialize(hsh)
+    hsh.each do |key, value| 
+      
+      self.send(("#{key}="), value)
+    end
   end
 end
