@@ -1,7 +1,9 @@
 class Person
+  attr_accessor :name, :birthday, :hair_color, :eye_color, :height, 
+  :weight, :handed, :complexion, :t_shirt_size, 
+  :wrist_size, :glove_size, :pant_length, :pant_width
 
   def initialize(hsh)
-    attr_accessor(hsh.keys.map {|k| k})
     hsh.each do |key, value|
       self.send(("#{key}="), value)
     end
