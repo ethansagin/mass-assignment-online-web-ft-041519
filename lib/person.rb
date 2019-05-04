@@ -2,8 +2,8 @@ class Person
   attr_accessor
   
   def initialize(hsh)
-    hsh.each do |key, value| 
-      attr_accessor(key)
+    attr_accessor(hsh.keys.map {|k| k})
+    hsh.each do |key, value|
       self.send(("#{key}="), value)
     end
   end
